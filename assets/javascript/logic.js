@@ -15,7 +15,7 @@ $(document).ready(function () {
             if (!text) {
                 searchTerm = $('#searchText').val().trim();
             } else if (text) {
-                searchTerm = text;
+                searchTerm = text.trim();
             }
 
             console.log("search: " + searchTerm + "; text: " + text);
@@ -74,9 +74,16 @@ $(document).ready(function () {
 
 
     $('#submit').on('click', function (event) {
-        $('#images').empty();
 
-        gifLogic.search(event);
+
+        if (!$('#searchText').val().trim()) {
+            event.preventDefault();
+            $('#searchText').attr('placeholder', "Enter something first!");
+        }  else {
+            $('#images').empty();
+            gifLogic.search(event);
+        }
+
 
     });
 
