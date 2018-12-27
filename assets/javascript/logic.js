@@ -21,7 +21,7 @@ $(document).ready(function () {
             console.log("search: " + searchTerm + "; text: " + text);
 
             $.ajax({
-                url: "http://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&limit=10&rating=pg-13&api_key=OCn5Gtyp5Lv543syaowh2uvdv25m4MAk",
+                url: "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&limit=10&rating=pg-13&api_key=OCn5Gtyp5Lv543syaowh2uvdv25m4MAk",
                 method: 'GET',
             }).done(function (result) {
 
